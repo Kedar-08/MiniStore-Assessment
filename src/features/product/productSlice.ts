@@ -9,7 +9,6 @@ type Product = {
   description: string;
   category: string;
   image: string;
-  // add other fields if needed
 };
 
 export const fetchProducts = createAsyncThunk<Product[]>(

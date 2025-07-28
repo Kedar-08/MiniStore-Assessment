@@ -13,8 +13,8 @@ body {
 }
 
 body {
-  color: colors.$gray-100; // or another Carbon color token
-  background: colors.$white-0; // or another Carbon color token
+  color: colors.$gray-100; 
+  background: colors.$white-0; 
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -55,7 +55,7 @@ a {
 
 .product-image-wrapper {
   width: 100%;
-  height: layout.rem(180px); // or your preferred height
+  height: layout.rem(180px); 
   position: relative;
   margin-bottom: layout.$spacing-05;
 }
@@ -84,7 +84,7 @@ a {
 
 .product-description {
   margin: layout.$spacing-03 0;
-  color: colors.$gray-70; // Use a Carbon gray token for text
+  color: colors.$gray-70; 
 }
 
 .no-products-message {
