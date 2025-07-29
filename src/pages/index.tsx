@@ -13,6 +13,7 @@ export default function Home() {
   useEffect(() => {
     dispatch(fetchProducts());
   }, [dispatch]);
+  
   useEffect(() => {
     const t = setTimeout(() => setDebouncedQuery(query), 300);
     return () => clearTimeout(t);

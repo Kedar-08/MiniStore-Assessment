@@ -13,9 +13,9 @@ body {
 }
 
 body {
-  color: colors.$gray-100; 
-  background: colors.$white-0; 
-  font-family: Arial, Helvetica, sans-serif;
+  color: colors.$gray-100;
+  background: colors.$white-0;
+  font-family: "IBM Plex Sans", "IBM Plex", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -55,7 +55,7 @@ a {
 
 .product-image-wrapper {
   width: 100%;
-  height: layout.rem(180px); 
+  height: layout.rem(180px);
   position: relative;
   margin-bottom: layout.$spacing-05;
 }
@@ -84,7 +84,7 @@ a {
 
 .product-description {
   margin: layout.$spacing-03 0;
-  color: colors.$gray-70; 
+  color: colors.$gray-70;
 }
 
 .no-products-message {
