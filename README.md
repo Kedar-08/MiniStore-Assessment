@@ -1,40 +1,149 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# MiniStore
 
-## Getting Started
+## 🚀 Features :
 
-First, run the development server:
+- **Product Catalog**: Browse products fetched from the Fake Store API
+- **Search Functionality**: Real-time search with debounced input for better performance
+- **Product Details**: Dedicated pages for individual product information
+- **State Management**: Redux Toolkit for efficient state management
+- **TypeScript**: Full type safety throughout the application
+- **Modern UI**: Clean UI interface using IBM Carbon components
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🛠️ Tech Stack used :
+
+- **Framework**: Next.js 14.2.30
+- **Language**: TypeScript
+- **State Management**: Redux Toolkit
+- **UI Components**: IBM Carbon Design System (@carbon/react)
+- **Styling**: SCSS with Carbon Design tokens
+- **HTTP Client**: Axios
+- **API**: Fake Store API (https://fakestoreapi.com)
+
+## 📁 Project Structure
+
+```
+├───public
+│   │   favicon.ico
+│   │
+│   └───fonts
+│           GeistMonoVF.woff
+│           GeistVF.woff
+│
+└───src
+    ├───components
+    │       ProductCard.tsx
+    │
+    ├───features
+    │   └───product
+    │           productSlice.ts
+    │
+    ├───hooks
+    │       reduxHooks.ts
+    │
+    ├───pages
+    │      index.tsx
+    │      _app.tsx
+    │      _document.tsx
+    │   
+    │   
+    │           
+    │
+    ├───store
+    │       store.ts
+    │
+    └───styles
+            globals.scss
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚦 Getting Started
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+### Prerequisites
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+- Node.js (version 16 or higher)
+- npm or yarn package manager
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### Installation
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd ministore
+   ```
 
-## Learn More
+2. **Install dependencies**
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+3. **Run the development server**
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+4. **Open your browser**
+   Navigate to [http://localhost:3000](http://localhost:3000) to see the application.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## 📱 Pages
 
-## Deploy on Vercel
+### Home Page (`/`)
+- Displays a grid of product cards
+- Real-time search functionality with 300ms debounce
+- Responsive layout using Carbon Grid system
+- Loading states and error handling
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+### Components
+
+#### ProductCard
+- Reusable component for displaying product information
+
+
+
+## 🎨 Styling & Design
+
+The application uses IBM Carbon Design System for Consistent UI components such as:**
+📝 Heading
+Used to display the "MiniStore" title because it provides consistent typography styling and semantic HTML structure for page headings.
+⏳ Loading
+Used to show a loading spinner with overlay while products are being fetched because it provides a professional loading state with built-in accessibility features.
+🔍 Search
+Used for the product search input because it includes search-specific styling, icons, clear button, and proper ARIA labels for accessibility.
+🔲 Grid
+Used as the main container for the product layout because it provides a responsive framework that handles spacing and alignment automatically.
+📏 Column
+Used to wrap each ProductCard and control responsive behavior because it defines how many columns each product takes up on different screen sizes (lg=4, md=4, sm=2).
+- **Design tokens** for spacing, colors, and typography
+
+
+
+## 🔄 State Management
+
+The app uses Redux Toolkit for state management:
+
+- **Product Slice**: Manages product data, loading states, and errors
+- **Async Thunks**: Handle API calls with proper loading/error states
+- **Typed Hooks**: Custom hooks for type-safe Redux usage
+
+### State Structure
+```typescript
+{
+  products: {
+    items: Product[],
+    loading: boolean,
+    error: string | null
+  }
+}
+```
+
+## 🌐 API Integration
+
+- **Data Source**: Fake Store API (https://fakestoreapi.com)
+- **Endpoints Used**:
+  - `GET /products` - Fetches all products
+- **Error Handling**: Comprehensive error states for network issues
+
